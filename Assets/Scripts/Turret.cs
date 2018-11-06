@@ -6,12 +6,18 @@ public class Turret : MonoBehaviour {
 
     private Transform target;
 
+    [Header("Attributes")]
     public float range = 15f;
+    public float fireRate = 2f;
+    private float fireCountdown = 0;
+
+    [Header("Setup Fields")]
     public float turnSpeed = 10f;
-
     public string enemyTag = "Enemy";
+    public Transform rotateAround = null;
 
-    public Transform rotateAround;
+    public GameObject bulletPrefab;
+    public Transform firePoint;
 
 	// Use this for initialization
 	void Start () {
@@ -56,8 +62,27 @@ public class Turret : MonoBehaviour {
         Vector3 dir = target.position - transform.position;
         Quaternion lookRotation = Quaternion.LookRotation(dir);
         Vector3 rotation = Quaternion.Lerp(rotateAround.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
-        rotateAround.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+        rotateAround.rotation = Quaternion.Euler(0f , rotation.y, 0f);
+
+        if (fireCountdown <= 0)
+        {
+            Shoot();
+            fireCountdown = 1f / fireRate;
+        }
+
+        fireCountdown -= Time.deltaTime;
 	}
+
+    void Shoot()
+    {
+        GameObject _bullet = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        Bullet bullet = _bullet.GetComponent<Bullet>();
+
+        if (bullet != null)
+        {
+            bullet.Seek(target);
+        }
+    }
 
     //Visual representation of the range in the scene
     void OnDrawGizmosSelected ()
