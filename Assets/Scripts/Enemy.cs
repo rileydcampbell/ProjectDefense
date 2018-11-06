@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour {
         target = Waypoints.wayPoints[0];
 	}
 	
-	// Update is called once per frame
+	// Test
 	void Update ()
     {
         Vector3 dir = target.position - transform.position;
