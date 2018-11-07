@@ -4899,7 +4899,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 8501d0acdaf914846ad0b71f926bcef4, type: 2}
+  - {fileID: 2100000, guid: a794e04d76bfafc46ad7bb3dd6f1ed98, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11174,7 +11174,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: d2a4d71bbfd969942a473f522259869a, type: 2}
+  - {fileID: 2100000, guid: 1f50e8db035763d4dbc6419594e507a7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -15033,6 +15033,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 4073515785740324, guid: 9e90f680a3f7c7d4491e0ff074e946c2,
+    type: 2}
+  enemyPrefab2: {fileID: 4056515422725352, guid: c9fab96696fd3ca4ca4224357cb78b09,
     type: 2}
   spawnPoint: {fileID: 1454654561}
   timeBetweenWaves: 5
