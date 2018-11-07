@@ -6,6 +6,8 @@ public class Bullet : MonoBehaviour {
 
     private Transform target;
     public GameObject impactEffect;
+
+    public float explosionRadius = 0f;
     public float speed = 70f;
 
     // Receive target from turret
@@ -38,13 +40,42 @@ public class Bullet : MonoBehaviour {
         }
 
         transform.Translate(dir.normalized * distance, Space.World);
+        transform.LookAt(target);
 
 	}
 
     void HitTarget()
     {
         GameObject effectIns = (GameObject)Instantiate(impactEffect, transform.position, transform.rotation);
-        Destroy(effectIns, 2f);
+
+        if (explosionRadius > 0f)
+        {
+            Explode();
+        }
+        else
+        {
+            Damage(target);
+        }
+
+        Destroy(effectIns, 4f);
         Destroy(gameObject);
     }
+
+    void Explode()
+    {
+        Collider[] collidedObjects = Physics.OverlapSphere(transform.position, explosionRadius);
+        foreach (Collider collider in collidedObjects)
+        {
+            if (collider.tag == "Enemy")
+            {
+                Damage(collider.transform);
+            }
+        }
+    }
+
+    void Damage (Transform enemy)
+    {
+        Destroy(enemy.gameObject);
+    }
+
 }
