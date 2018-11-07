@@ -97,4 +97,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   enemyName: Heavy
-  health: 150
+  health: 175
