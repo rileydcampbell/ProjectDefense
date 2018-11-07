@@ -18,6 +18,7 @@ public class Turret : MonoBehaviour {
     public string enemyTag = "Enemy";
     public Transform rotateAround = null;
     private float xRot = 0;
+    public AudioSource fireSound;
 
     public GameObject bulletPrefab;
     public Transform firePoint;
@@ -29,6 +30,7 @@ public class Turret : MonoBehaviour {
         InvokeRepeating("UpdateTarget", 0f, 0.5f); // Repeats the update target function every 1/2 second, prevents calling the function 60+ times per second if the method was instead in the update function
         if (tower == "Missle")
             xRot = -90;
+        fireSound = GetComponent<AudioSource>();
 	}
 
     // Method that iterates through all enemies in range, finds the closest one, and sets it as the target
@@ -93,6 +95,11 @@ public class Turret : MonoBehaviour {
             bullet1 = _bullet1.GetComponent<Bullet>();
             GameObject _bullet2 = (GameObject)Instantiate(bulletPrefab, firePoint2.position, firePoint2.rotation);
             bullet2 = _bullet2.GetComponent<Bullet>();
+            fireSound.Play();
+        }
+        else
+        {
+            fireSound.Play();
         }
 
         if (bullet != null)
@@ -110,6 +117,8 @@ public class Turret : MonoBehaviour {
             bullet2.Seek(target);
             bullet2.PassDamage(damage);
         }
+
+        
     }
 
     //Visual representation of the range in the scene
