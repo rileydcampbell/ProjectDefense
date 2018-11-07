@@ -6,6 +6,8 @@ public class Enemy : MonoBehaviour {
 
     public float speed;
 
+    public string enemyName;
+
     public float health = 50;
 
     private Transform target;
