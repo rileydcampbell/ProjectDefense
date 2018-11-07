@@ -8,6 +8,7 @@ public class Turret : MonoBehaviour {
 
     [Header("Attributes")]
     public float range = 15f;
+    public float damage = 10f;
     public float fireRate = 2f;
     private float fireCountdown = 0;
 
@@ -97,14 +98,17 @@ public class Turret : MonoBehaviour {
         if (bullet != null)
         {
             bullet.Seek(target);
+            bullet.PassDamage(damage);
         }
         if (bullet1 != null)
         {
             bullet1.Seek(target);
+            bullet1.PassDamage(damage);
         }
         if (bullet2 != null)
         {
             bullet2.Seek(target);
+            bullet2.PassDamage(damage);
         }
     }
 

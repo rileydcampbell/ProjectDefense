@@ -1310,7 +1310,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &174807299
 GameObject:
@@ -2358,7 +2358,7 @@ Transform:
   - {fileID: 1745622169}
   - {fileID: 13744198}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &296316147
 GameObject:
@@ -3812,7 +3812,7 @@ Transform:
   - {fileID: 267964623}
   - {fileID: 635502649}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &520165942
 GameObject:
@@ -4937,7 +4937,7 @@ Transform:
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &697823735
 GameObject:
@@ -7209,7 +7209,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4375840532952870, guid: 960a8fbf715a4794e807d8e7051f95e8, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114763287270240390, guid: 960a8fbf715a4794e807d8e7051f95e8,
         type: 2}
@@ -11212,7 +11212,7 @@ Transform:
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1454953925
 GameObject:
@@ -12832,7 +12832,7 @@ Transform:
   - {fileID: 1011845186}
   - {fileID: 1725128770}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1745622168
 GameObject:
@@ -12862,6 +12862,53 @@ Transform:
   m_Father: {fileID: 295094225}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1745837987
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4039579793479472, guid: f81ff47887e3e794789e875dda61655f, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 19.922485
+      objectReference: {fileID: 0}
+    - target: {fileID: 4039579793479472, guid: f81ff47887e3e794789e875dda61655f, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.5724027
+      objectReference: {fileID: 0}
+    - target: {fileID: 4039579793479472, guid: f81ff47887e3e794789e875dda61655f, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 15.868162
+      objectReference: {fileID: 0}
+    - target: {fileID: 4039579793479472, guid: f81ff47887e3e794789e875dda61655f, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4039579793479472, guid: f81ff47887e3e794789e875dda61655f, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4039579793479472, guid: f81ff47887e3e794789e875dda61655f, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4039579793479472, guid: f81ff47887e3e794789e875dda61655f, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4039579793479472, guid: f81ff47887e3e794789e875dda61655f, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114943262318975006, guid: f81ff47887e3e794789e875dda61655f,
+        type: 2}
+      propertyPath: damage
+      value: 10
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f81ff47887e3e794789e875dda61655f, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &1750215224
 GameObject:
   m_ObjectHideFlags: 0
@@ -15000,7 +15047,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2125256436
 GameObject:

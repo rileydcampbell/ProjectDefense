@@ -9,13 +9,19 @@ public class Bullet : MonoBehaviour {
 
     public float explosionRadius = 0f;
     public float speed = 70f;
+    public float damage = 0f;
 
+    
     // Receive target from turret
     public void Seek(Transform _target)
     {
         target = _target;
     }
 
+    public void PassDamage(float dmg)
+    {
+        damage = dmg;
+    }
 
 	void Start () {
 		
@@ -73,9 +79,10 @@ public class Bullet : MonoBehaviour {
         }
     }
 
-    void Damage (Transform enemy)
+    void Damage (Transform _enemy)
     {
-        Destroy(enemy.gameObject);
+        Enemy enemey = _enemy.GetComponent<Enemy>();
+        enemey.takeDamage(damage);
     }
 
 }

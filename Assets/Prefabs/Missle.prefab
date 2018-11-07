@@ -128,3 +128,4 @@ MonoBehaviour:
     type: 2}
   explosionRadius: 7
   speed: 30
+  damage: 0

@@ -431,6 +431,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 9
+  damage: 10
   fireRate: 0.5
   tower: Missle
   turnSpeed: 10

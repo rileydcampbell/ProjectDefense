@@ -6,6 +6,8 @@ public class Enemy : MonoBehaviour {
 
     public float speed;
 
+    public float health = 50;
+
     private Transform target;
     private int wayPointIndex = 0;
 
@@ -24,6 +26,11 @@ public class Enemy : MonoBehaviour {
         {
             GetNextWayPoint();
         }
+
+        if(health <= 0)
+        {
+            Death();
+        }
 	}
 
     void GetNextWayPoint()
@@ -36,5 +43,15 @@ public class Enemy : MonoBehaviour {
 
         wayPointIndex++;
         target = Waypoints.wayPoints[wayPointIndex];
+    }
+
+    public void takeDamage(float damage)
+    {
+        health -= damage;
+    }
+
+    void Death()
+    {
+        Destroy(gameObject);
     }
 }
