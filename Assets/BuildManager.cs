@@ -20,8 +20,14 @@ public class BuildManager : MonoBehaviour {
 
     private GameObject turretToBuild;
 
+    public void setTurret(GameObject newTurret)
+    {
+        turretToBuild = newTurret;
+    }
+
     public GameObject getTurretToBuild()
     {
         return turretToBuild;
     }
+
 }

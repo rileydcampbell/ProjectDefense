@@ -98,7 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 9
   enemyName: Average
-  health: 90
+  health: 150
 --- !u!135 &135041445300966424
 SphereCollider:
   m_ObjectHideFlags: 1

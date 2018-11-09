@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 82843745119082090}
   m_Layer: 0
   m_Name: MissleTurret
-  m_TagString: Untagged
+  m_TagString: Turret
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -539,3 +539,4 @@ MonoBehaviour:
   firePoint: {fileID: 4744300584979090}
   firePoint1: {fileID: 4624274798696172}
   firePoint2: {fileID: 4891884216695762}
+  menuObject: {fileID: 0}

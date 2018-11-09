@@ -12,6 +12,9 @@
         protected TouchAngleDeflection currentTad; //Keep track of angle and deflection for when we click
         protected bool touchpadTouched;
 
+        public GameObject machineTurret;
+        public GameObject missleTurret;
+
         protected virtual void Awake()
         {
             menu = GetComponent<VRTK_RadialMenu>();
@@ -131,6 +134,16 @@
             touchAngleDeflection.angle = 360 - e.touchpadAngle;
             touchAngleDeflection.deflection = e.touchpadAxis.magnitude;
             return touchAngleDeflection;
+        }
+
+        public void ToggleMachine()
+        {
+            BuildManager.instance.setTurret(machineTurret);
+        }
+
+        public void ToggleMissle()
+        {
+            BuildManager.instance.setTurret(missleTurret);
         }
     }
 }

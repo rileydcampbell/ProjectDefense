@@ -25,6 +25,11 @@ public class Turret : MonoBehaviour {
     public Transform firePoint1;
     public Transform firePoint2;
 
+    public bool menuState = false;
+    public bool newMenuState = false;
+    public GameObject menu;
+
+
 	// Use this for initialization
 	void Start () {
         InvokeRepeating("UpdateTarget", 0f, 0.5f); // Repeats the update target function every 1/2 second, prevents calling the function 60+ times per second if the method was instead in the update function
@@ -32,6 +37,11 @@ public class Turret : MonoBehaviour {
             xRot = -90;
         fireSound = GetComponent<AudioSource>();
 	}
+
+    public void SetMenuState(bool state)
+    {
+        newMenuState = state;
+    }
 
     // Method that iterates through all enemies in range, finds the closest one, and sets it as the target
     void UpdateTarget()
@@ -62,7 +72,14 @@ public class Turret : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(target == null)
+
+        if (newMenuState != menuState)
+        {
+            menu.SetActive(newMenuState);
+            menuState = newMenuState;
+        }
+
+        if (target == null)
         {
             return;
         }
@@ -80,7 +97,8 @@ public class Turret : MonoBehaviour {
         }
 
         fireCountdown -= Time.deltaTime;
-	}
+
+    }
 
     void Shoot()
     {
@@ -127,4 +145,5 @@ public class Turret : MonoBehaviour {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, range);
     }
+
 }

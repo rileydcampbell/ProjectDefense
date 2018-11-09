@@ -371,5 +371,10 @@ namespace VRTK
 
             SetColliderState(enabled, e);
         }
+
+        public void ButtonPressed()
+        {
+            print("Success, The Button has been pressed and this is a long message to indicate that");
+        }
     }
 }

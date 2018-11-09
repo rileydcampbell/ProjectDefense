@@ -124,6 +124,11 @@ namespace VRTK
             if (baseHighlighter != null && highlightColor != Color.clear)
             {
                 baseHighlighter.Highlight(highlightColor);
+                if (objectToHighlight.tag == "Turret")
+                {
+                    objectToHighlight.GetComponent<Turret>().SetMenuState(true);
+                    print("Set Menu State to True (Highlighter Side)");
+                }
             }
             else
             {
@@ -139,6 +144,11 @@ namespace VRTK
             if (baseHighlighter != null)
             {
                 baseHighlighter.Unhighlight();
+                if (objectToHighlight.tag == "Turret")
+                {
+                    objectToHighlight.GetComponent<Turret>().SetMenuState(false);
+                    print("Set Menu State to False (Highlighter Side)");
+                }
             }
         }
 
