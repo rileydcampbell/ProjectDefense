@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using VRTK;
 
 public class Turret : MonoBehaviour {
 
@@ -11,6 +12,9 @@ public class Turret : MonoBehaviour {
     public float damage = 10f;
     public float fireRate = 2f;
     private float fireCountdown = 0;
+    public int towerCost = 100;
+    public int towerLevel = 1;
+    public int upgradeCost = 150;
 
     [Header("Setup Fields")]
     public string tower = "";
@@ -28,7 +32,6 @@ public class Turret : MonoBehaviour {
     public bool menuState = false;
     public bool newMenuState = false;
     public GameObject menu;
-
 
 	// Use this for initialization
 	void Start () {
@@ -144,6 +147,21 @@ public class Turret : MonoBehaviour {
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, range);
+    }
+
+    public int GetTowerCost()
+    {
+        return towerCost;
+    }
+
+    public int GetUpgradeCost()
+    {
+        return upgradeCost;
+    }
+
+    public int GetLevel()
+    {
+        return towerLevel;
     }
 
 }

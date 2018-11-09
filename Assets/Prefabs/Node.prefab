@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114416961734419404}
   - component: {fileID: 114885514194086652}
   - component: {fileID: 114787393394568100}
+  - component: {fileID: 114120362633823030}
   m_Layer: 0
   m_Name: Node
   m_TagString: Untagged
@@ -39,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1997858625023434}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 4, y: 1, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
@@ -99,6 +100,38 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114120362633823030
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1997858625023434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clipOnNearTouch: {fileID: 0}
+  strengthOnNearTouch: 0
+  durationOnNearTouch: 0
+  intervalOnNearTouch: 0.05
+  cancelOnNearUntouch: 1
+  clipOnTouch: {fileID: 0}
+  strengthOnTouch: 0
+  durationOnTouch: 0
+  intervalOnTouch: 0.05
+  cancelOnUntouch: 1
+  clipOnGrab: {fileID: 0}
+  strengthOnGrab: 0
+  durationOnGrab: 0
+  intervalOnGrab: 0.05
+  cancelOnUngrab: 1
+  clipOnUse: {fileID: 0}
+  strengthOnUse: 0.9
+  durationOnUse: 0.4
+  intervalOnUse: 0.4
+  cancelOnUnuse: 1
+  objectToAffect: {fileID: 0}
 --- !u!114 &114416961734419404
 MonoBehaviour:
   m_ObjectHideFlags: 1

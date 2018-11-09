@@ -6,6 +6,9 @@ using VRTK;
 public class TurretInteraction : MonoBehaviour {
 
     public VRTK_InteractableObject linkedObject;
+    public GameObject turretToBuild;
+    public GameObject currentTurret;
+    public int turretLevel;
 
 
     protected virtual void OnEnable()
@@ -18,7 +21,6 @@ public class TurretInteraction : MonoBehaviour {
             linkedObject.InteractableObjectUnused += InteractableObjectUnused;
         }
 
-        print("On");
     }
 
     protected virtual void OnDisable()
@@ -28,17 +30,23 @@ public class TurretInteraction : MonoBehaviour {
             linkedObject.InteractableObjectUsed -= InteractableObjectUsed;
             linkedObject.InteractableObjectUnused -= InteractableObjectUnused;
         }
-            print("Off");
+
     }
 
     protected virtual void InteractableObjectUsed(object sender, InteractableObjectEventArgs e)
     {
-        
+        if(turretLevel < 3 && GoldManager.goldManager.GetCurrentGold() >= currentTurret.GetComponent<Turret>().GetUpgradeCost())
+        {
+            print("Destroying and Upgrading");
+            Instantiate(turretToBuild, transform.position + new Vector3(0f, 0f, 0f), transform.rotation);
+            GoldManager.goldManager.ModifyGold(-currentTurret.GetComponent<Turret>().GetUpgradeCost());
+            Destroy(this.gameObject);
+        }
     }
 
     protected virtual void InteractableObjectUnused(object sender, InteractableObjectEventArgs e)
     {
-        
+        print("Debug");
     }
 
 }

@@ -18,8 +18,6 @@ public class NodeInteraction : MonoBehaviour {
             linkedObject.InteractableObjectUsed += InteractableObjectUsed;
             linkedObject.InteractableObjectUnused += InteractableObjectUnused;
         }
-
-        print("On");
     }
 
     protected virtual void OnDisable()
@@ -29,9 +27,7 @@ public class NodeInteraction : MonoBehaviour {
             linkedObject.InteractableObjectUsed -= InteractableObjectUsed;
             linkedObject.InteractableObjectUnused -= InteractableObjectUnused;
         }
-        else
 
-        print("Off");
     }
 
     protected virtual void InteractableObjectUsed(object sender, InteractableObjectEventArgs e)
@@ -43,13 +39,15 @@ public class NodeInteraction : MonoBehaviour {
         }
 
         GameObject turretToBuild = BuildManager.instance.getTurretToBuild();
-        turret = (GameObject)Instantiate(turretToBuild, transform.position + new Vector3(0f,0.50f,0f), transform.rotation);
-        print("turret built");
+        if (GoldManager.goldManager.GetCurrentGold() >= turretToBuild.GetComponent<Turret>().GetTowerCost())
+        {
+            GoldManager.goldManager.ModifyGold(-100);
+            turret = (GameObject)Instantiate(turretToBuild, transform.position + new Vector3(0f, 0.50f, 0f), transform.rotation);
+        }
     }
 
     protected virtual void InteractableObjectUnused(object sender, InteractableObjectEventArgs e)
     {
         OnDisable();
-        print("test2");
     }
 }
