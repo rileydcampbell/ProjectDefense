@@ -96,9 +96,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2624d2833c7a0344fb185e1d62410970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startSpeed: 10
   speed: 15
   enemyName: Fast
   health: 60
+  worth: 10
+  deathEffect: {fileID: 1260564048181312, guid: 7901dd6ff3dd95c4a9291bef5c741320,
+    type: 2}
 --- !u!136 &136183301929262620
 CapsuleCollider:
   m_ObjectHideFlags: 1

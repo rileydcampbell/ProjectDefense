@@ -14,6 +14,7 @@
 
         public GameObject machineTurret;
         public GameObject missleTurret;
+        public GameObject laserTurret;
 
         protected virtual void Awake()
         {
@@ -144,6 +145,11 @@
         public void ToggleMissle()
         {
             BuildManager.instance.setTurret(missleTurret);
+        }
+
+        public void ToggleLaser()
+        {
+            BuildManager.instance.setTurret(laserTurret);
         }
     }
 }

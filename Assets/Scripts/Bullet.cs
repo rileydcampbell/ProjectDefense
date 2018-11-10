@@ -82,7 +82,7 @@ public class Bullet : MonoBehaviour {
     void Damage (Transform _enemy)
     {
         Enemy enemey = _enemy.GetComponent<Enemy>();
-        enemey.takeDamage(damage);
+        enemey.TakeDamage(damage);
     }
 
 }

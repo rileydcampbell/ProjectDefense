@@ -214,7 +214,7 @@ GameObject:
   - component: {fileID: 65527839573859188}
   - component: {fileID: 114849151956789610}
   m_Layer: 0
-  m_Name: MachineTurret
+  m_Name: MachineTurretLvl1
   m_TagString: Turret
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2621,6 +2621,8 @@ MonoBehaviour:
   menuState: 0
   newMenuState: 0
   menu: {fileID: 1066475038674490}
+  useLaser: 0
+  lineRenderer: {fileID: 0}
 --- !u!114 &114972609353004822
 MonoBehaviour:
   m_ObjectHideFlags: 1
