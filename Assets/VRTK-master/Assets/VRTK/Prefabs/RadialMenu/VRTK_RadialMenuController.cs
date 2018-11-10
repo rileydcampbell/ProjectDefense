@@ -16,6 +16,10 @@
         public GameObject missleTurret;
         public GameObject laserTurret;
 
+        public GameObject machineMenu;
+        public GameObject missleMenu;
+        public GameObject laserMenu;
+
         protected virtual void Awake()
         {
             menu = GetComponent<VRTK_RadialMenu>();
@@ -151,5 +155,27 @@
         {
             BuildManager.instance.setTurret(laserTurret);
         }
+
+        public void ToggleMachineDescription(bool state)
+        {
+
+            //tempMenu = (GameObject)Instantiate(descriptionMenu, transform.position - (transform.right*0.25f), Quaternion.Euler(0f,transform.rotation.eulerAngles.y,0f));
+            machineMenu.SetActive(state);
+        }
+
+        public void ToggleMissleDescription(bool state)
+        {
+
+            //tempMenu = (GameObject)Instantiate(descriptionMenu, transform.position - (transform.right*0.25f), Quaternion.Euler(0f,transform.rotation.eulerAngles.y,0f));
+            missleMenu.SetActive(state);
+        }
+
+        public void ToggleLaserDescription(bool state)
+        {
+
+            //tempMenu = (GameObject)Instantiate(descriptionMenu, transform.position - (transform.right*0.25f), Quaternion.Euler(0f,transform.rotation.eulerAngles.y,0f));
+            laserMenu.SetActive(state);
+        }
+
     }
 }
