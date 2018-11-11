@@ -126,7 +126,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   impactEffect: {fileID: 1216593039366788, guid: dcf16c94ba3ae2b4980ec851506f2204,
     type: 2}
-  bulletType: Mortar
   explosionRadius: 1
   speed: 20
   damage: 0

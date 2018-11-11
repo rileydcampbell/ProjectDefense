@@ -41,7 +41,7 @@ public class NodeInteraction : MonoBehaviour {
         GameObject turretToBuild = BuildManager.instance.getTurretToBuild();
         if (GoldManager.goldManager.GetCurrentGold() >= turretToBuild.GetComponent<Turret>().GetTowerCost())
         {
-            GoldManager.goldManager.ModifyGold(-100);
+            GoldManager.goldManager.ModifyGold(-turretToBuild.GetComponent<Turret>().GetTowerCost());
             turret = (GameObject)Instantiate(turretToBuild, transform.position + new Vector3(0f, 0.50f, 0f), transform.rotation);
         }
     }

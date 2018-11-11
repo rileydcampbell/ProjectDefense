@@ -2566,11 +2566,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 7
-  damage: 70
+  damage: 30
   fireRate: 0
   towerCost: 175
   towerLevel: 1
-  upgradeCost: 250
+  upgradeCost: 325
   tower: Laser
   turnSpeed: 12
   enemyTag: Enemy
@@ -2588,7 +2588,7 @@ MonoBehaviour:
   lineRenderer: {fileID: 120581061778985656}
   impactEffect: {fileID: 198024860745131222}
   impactLight: {fileID: 108235009230339536}
-  slowFactor: 0.6
+  slowFactor: 0.5
 --- !u!114 &114775140383774586
 MonoBehaviour:
   m_ObjectHideFlags: 1

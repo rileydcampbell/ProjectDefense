@@ -1672,7 +1672,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 8
-  damage: 85
+  damage: 50
   fireRate: 0
   towerCost: 0
   towerLevel: 2

@@ -12,7 +12,7 @@ public class Turret : MonoBehaviour {
     public float damage = 10f;
     public float fireRate = 2f;
     private float fireCountdown = 0;
-    public int towerCost = 100;
+    public int towerCost;
     public int towerLevel = 1;
     public int upgradeCost = 150;
 

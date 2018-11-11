@@ -7,6 +7,8 @@ public class WaveSpawnController : MonoBehaviour
 
     public enum SpawnState { Spawning, Waiting, Counting };
 
+    public static WaveSpawnController spawnController;
+
     [System.Serializable]
     public class Waves
     {
@@ -30,6 +32,7 @@ public class WaveSpawnController : MonoBehaviour
     private void Start()
     {
         waveCountDown = timeBetweenWaves;
+        spawnController = this;
     }
 
     private void Update()
@@ -78,7 +81,7 @@ public class WaveSpawnController : MonoBehaviour
     void SpawnEnemy(Transform _enemy)
     {
         Enemy __enemy = _enemy.GetComponent<Enemy>();
-        if(__enemy.enemyName == "Fast")
+        if(__enemy.enemyName == "Fast" || __enemy.enemyName == "Heavy")
         {
             Instantiate(_enemy, spawnPoint.position, spawnPoint.rotation*Quaternion.Euler(90,0,0));
         }
@@ -115,6 +118,11 @@ public class WaveSpawnController : MonoBehaviour
             }
         }
         return true;
+    }
+
+    public int GetCurrentWave()
+    {
+        return (nextWave + 1);
     }
 
 }

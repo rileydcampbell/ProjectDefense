@@ -14,6 +14,8 @@ public class Enemy : MonoBehaviour {
     private Transform target;
     private int wayPointIndex = 0;
 
+    public int value = 10;
+
     public GameObject deathEffect;
 
 	void Start ()
@@ -36,6 +38,8 @@ public class Enemy : MonoBehaviour {
         {
             Death();
         }
+
+        speed = startSpeed;
 	}
 
     public void SlowSpeed(float factor)
@@ -56,6 +60,7 @@ public class Enemy : MonoBehaviour {
         target = Waypoints.wayPoints[wayPointIndex];
     }
 
+
     public void TakeDamage(float damage)
     {
         health -= damage;
@@ -63,6 +68,7 @@ public class Enemy : MonoBehaviour {
 
     void Death()
     {
+        GoldManager.goldManager.ModifyGold(value);
         GameObject effect = (GameObject)Instantiate(deathEffect, transform.position, transform.rotation);
         Destroy(effect, 4f);
         Destroy(gameObject);
