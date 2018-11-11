@@ -32,6 +32,7 @@ public class Turret : MonoBehaviour {
     public bool menuState = false;
     public bool newMenuState = false;
     public GameObject menu;
+    public GameObject rangeDisplay;
 
     public bool useLaser = false;
     public LineRenderer lineRenderer;
@@ -46,6 +47,7 @@ public class Turret : MonoBehaviour {
         if (tower == "Missle")
             xRot = -90;
         fireSound = GetComponent<AudioSource>();
+        rangeDisplay.SetActive(false);
 	}
 
     public void SetMenuState(bool state)
@@ -86,7 +88,8 @@ public class Turret : MonoBehaviour {
 
         if (newMenuState != menuState)
         {
-            menu.SetActive(newMenuState);
+            rangeDisplay.SetActive(newMenuState);
+            //menu.SetActive(newMenuState);
             menuState = newMenuState;
         }
 
