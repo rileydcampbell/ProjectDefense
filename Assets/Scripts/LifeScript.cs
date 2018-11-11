@@ -14,6 +14,6 @@ public class LifeScript : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        lifeText.text = "Lives: " + LifeManager.lifeManager.GetCurrentLife();
+        lifeText.text = "Life: " + LifeManager.lifeManager.GetCurrentLife();
     }
 }

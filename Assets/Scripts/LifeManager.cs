@@ -13,6 +13,7 @@ public class LifeManager : MonoBehaviour {
         lifeManager = this;
     }
 
+
     public int GetCurrentLife()
     {
         return life;
@@ -21,5 +22,10 @@ public class LifeManager : MonoBehaviour {
     public void ModifyLife(int mod)
     {
         life += mod;
+
+        if(life <= 0)
+        {
+            print("Gameover");
+        }
     }
 }

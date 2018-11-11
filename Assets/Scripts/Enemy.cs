@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour {
 
-    public float startSpeed = 10f;
-    [HideInInspector]
     public float speed;
+    public float startSpeed = 10f;
 
     public string enemyName;
 
     public float health = 50;
-
-    public int worth = 10;
 
     private Transform target;
     private int wayPointIndex = 0;
@@ -25,7 +22,6 @@ public class Enemy : MonoBehaviour {
         speed = startSpeed;
 	}
 	
-	// Test
 	void Update ()
     {
         Vector3 dir = target.position - transform.position;
@@ -36,8 +32,10 @@ public class Enemy : MonoBehaviour {
             GetNextWayPoint();
         }
 
-        speed = startSpeed;
-
+        if(health <= 0)
+        {
+            Death();
+        }
 	}
 
     public void SlowSpeed(float factor)
@@ -49,6 +47,7 @@ public class Enemy : MonoBehaviour {
     {
         if (wayPointIndex >= Waypoints.wayPoints.Length - 1)
         {
+            LifeManager.lifeManager.ModifyLife(-1);
             Destroy(gameObject);
             return;
         }
@@ -60,18 +59,12 @@ public class Enemy : MonoBehaviour {
     public void TakeDamage(float damage)
     {
         health -= damage;
-
-        if (health <= 0)
-        {
-            Death();
-        }
     }
 
     void Death()
     {
-        GameObject effect = (GameObject)Instantiate(deathEffect, transform.position, Quaternion.identity);
-        GoldManager.goldManager.ModifyGold(worth);
-        Destroy(gameObject);
+        GameObject effect = (GameObject)Instantiate(deathEffect, transform.position, transform.rotation);
         Destroy(effect, 4f);
+        Destroy(gameObject);
     }
 }

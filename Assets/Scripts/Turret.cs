@@ -187,7 +187,6 @@ public class Turret : MonoBehaviour {
             bullet2.Seek(target);
             bullet2.PassDamage(damage);
         }
-
         
     }
 

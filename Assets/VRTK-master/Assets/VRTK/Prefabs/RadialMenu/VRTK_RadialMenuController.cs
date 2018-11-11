@@ -15,10 +15,12 @@
         public GameObject machineTurret;
         public GameObject missleTurret;
         public GameObject laserTurret;
+        public GameObject mortarTurret;
 
         public GameObject machineMenu;
         public GameObject missleMenu;
         public GameObject laserMenu;
+        public GameObject mortarMenu;
 
         protected virtual void Awake()
         {
@@ -175,6 +177,16 @@
 
             //tempMenu = (GameObject)Instantiate(descriptionMenu, transform.position - (transform.right*0.25f), Quaternion.Euler(0f,transform.rotation.eulerAngles.y,0f));
             laserMenu.SetActive(state);
+        }
+
+        public void ToggleMortar()
+        {
+            BuildManager.instance.setTurret(mortarTurret);
+        }
+
+        public void ToggleMortarDescription(bool state)
+        {
+            mortarMenu.SetActive(state);
         }
 
     }
