@@ -30537,7 +30537,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1326f3568a84913419e8b4f729fea446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goldController: {fileID: 287291482}
 --- !u!1 &832124008
 GameObject:
   m_ObjectHideFlags: 0
@@ -74998,7 +74997,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3905cd6b9630b4342989899f89187651, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gold: 5000
+  gold: 500
 --- !u!114 &2110651645
 MonoBehaviour:
   m_ObjectHideFlags: 0

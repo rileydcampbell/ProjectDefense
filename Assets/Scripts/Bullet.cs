@@ -11,6 +11,9 @@ public class Bullet : MonoBehaviour {
     public float speed = 70f;
     public float damage = 0f;
 
+    public float range = 20;
+    public string enemyTag = "Enemy";
+
     
     // Receive target from turret
     public void Seek(Transform _target)
@@ -32,8 +35,16 @@ public class Bullet : MonoBehaviour {
     {
         if (target == null)
         {
-            Destroy(gameObject);
-            return;
+            if(UpdateTarget() == null)
+            {
+                Destroy(gameObject);
+                return;
+            }
+            else
+            {
+                target = UpdateTarget();
+            }
+            
         }
 
         Vector3 dir = target.position - transform.position;
@@ -49,6 +60,32 @@ public class Bullet : MonoBehaviour {
         transform.LookAt(target);
 
 	}
+
+    Transform UpdateTarget()
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
+        float shortestDistance = Mathf.Infinity;
+        GameObject nearestEnemy = null;
+
+        foreach (GameObject enemy in enemies)
+        {
+            float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+            if (distanceToEnemy < shortestDistance)
+            {
+                shortestDistance = distanceToEnemy;
+                nearestEnemy = enemy;
+            }
+        }
+
+        if (nearestEnemy != null && shortestDistance <= range)
+        {
+            return nearestEnemy.transform;
+        }
+        else
+        {
+            return null;
+        }
+    }
 
     void HitTarget()
     {
