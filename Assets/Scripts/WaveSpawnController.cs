@@ -131,7 +131,10 @@ public class WaveSpawnController : MonoBehaviour
         {
             return true;
         }
-        return false;
+        else
+        {
+            return false;
+        }
     }
 
 }

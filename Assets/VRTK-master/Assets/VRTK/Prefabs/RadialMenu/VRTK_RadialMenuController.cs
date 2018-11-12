@@ -54,7 +54,6 @@
                 events.TouchpadAxisChanged += new ControllerInteractionEventHandler(DoTouchpadAxisChanged);
 
                 menu.FireHapticPulse += new HapticPulseEventHandler(AttemptHapticPulse);
-                goldUI.SetActive(true);
             }
         }
 
@@ -67,7 +66,6 @@
             events.TouchpadAxisChanged -= new ControllerInteractionEventHandler(DoTouchpadAxisChanged);
 
             menu.FireHapticPulse -= new HapticPulseEventHandler(AttemptHapticPulse);
-            goldUI.SetActive(false);
         }
 
         protected virtual void DoClickButton(object sender = null) // The optional argument reduces the need for middleman functions in subclasses whose events likely pass object sender
