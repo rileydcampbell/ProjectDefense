@@ -111,7 +111,7 @@ MonoBehaviour:
   speed: 5
   startSpeed: 5
   enemyName: Heavy
-  health: 225
-  value: 20
+  health: 300
+  value: 35
   deathEffect: {fileID: 1062028898294118, guid: b735d65bcb9b25c47845d4b49af5f8c8,
     type: 2}

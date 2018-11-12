@@ -109,9 +109,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 12
-  startSpeed: 3
+  startSpeed: 5
   enemyName: Fatty
   health: 1250
-  value: 30
+  value: 150
   deathEffect: {fileID: 1742345001018242, guid: 6a4f812c3bb4e304bace4c20781f86b3,
     type: 2}

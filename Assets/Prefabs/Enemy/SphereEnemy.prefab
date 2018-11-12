@@ -100,7 +100,7 @@ MonoBehaviour:
   startSpeed: 10
   enemyName: Average
   health: 115
-  value: 10
+  value: 15
   deathEffect: {fileID: 1792669087352352, guid: 57150656e3f8a1c40a4215f6b5f73702,
     type: 2}
 --- !u!135 &135041445300966424

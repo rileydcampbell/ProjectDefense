@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class GoldScript : MonoBehaviour {
 
     Text goldText;
+
     void Start () {
         goldText = GetComponent<Text>();
 	}

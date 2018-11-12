@@ -6,14 +6,28 @@ using UnityEngine.UI;
 public class WaveScript : MonoBehaviour {
 
     Text waveText;
+    private bool waveActive = false;
+
     void Start()
     {
         waveText = GetComponent<Text>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        waveText.text = "Current Wave: " + WaveSpawnController.spawnController.GetCurrentWave();
+        if (waveActive)
+        {
+            waveText.text = "Current Wave: " + WaveSpawnController.spawnController.GetCurrentWave();
+        }
+        else
+        {
+            waveText.text = "Next Wave: " + WaveSpawnController.spawnController.GetCurrentWave();
+        }
+        
+    }
+
+    public void UpdateWaveState(bool state)
+    {
+        waveActive = state;
     }
 }

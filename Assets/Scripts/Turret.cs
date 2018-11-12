@@ -89,7 +89,10 @@ public class Turret : MonoBehaviour {
         if (newMenuState != menuState)
         {
             rangeDisplay.SetActive(newMenuState);
-            //menu.SetActive(newMenuState);
+            if(menu != null)
+            {
+                menu.SetActive(newMenuState);
+            }
             menuState = newMenuState;
         }
 

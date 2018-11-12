@@ -100,8 +100,8 @@ MonoBehaviour:
   startSpeed: 15
   enemyName: Fast
   health: 125
-  value: 5
-  deathEffect: {fileID: 1260564048181312, guid: 7901dd6ff3dd95c4a9291bef5c741320,
+  value: 20
+  deathEffect: {fileID: 1530392743508440, guid: 343dbdd13f4a4d44cb9d567b2d851cb0,
     type: 2}
 --- !u!136 &136958403490361850
 CapsuleCollider:

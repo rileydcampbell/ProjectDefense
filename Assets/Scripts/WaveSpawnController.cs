@@ -5,7 +5,7 @@ using UnityEngine;
 public class WaveSpawnController : MonoBehaviour
 {
 
-    public enum SpawnState { Spawning, Waiting, Counting };
+    public enum SpawnState { Spawning, Waiting, ReadyToStart };
 
     public static WaveSpawnController spawnController;
 
@@ -16,65 +16,57 @@ public class WaveSpawnController : MonoBehaviour
         public Transform enemy;
         public int count;
         public float rate;
+        public Transform enemy2;
+        public int count2;
+        public float rate2;
     }
 
     public Transform spawnPoint;
     public Waves[] waves;
     private int nextWave = 0;
 
-    public float timeBetweenWaves = 5f;
-    public float waveCountDown = 0f;
+    public GameObject waveTextController;
+    public GameObject waveMessageController;
 
     private float searchCountdown = 1f;
 
-    private SpawnState state = SpawnState.Counting;
+    private SpawnState state = SpawnState.Waiting;
 
     private void Start()
     {
-        waveCountDown = timeBetweenWaves;
         spawnController = this;
     }
 
     private void Update()
     {
-        if (state == SpawnState.Waiting)
-        {
-            if (!EnemyIsAlive())
-            {
-                WaveCompleted();
-            }
-            else
-            {
-                return;
-            }
-        }
-
-        if (waveCountDown <= 0)
+        if (state == SpawnState.ReadyToStart)
         {
             if (state != SpawnState.Spawning)
             {
                 StartCoroutine(SpawnWave(waves[nextWave]));
             }
         }
-        else
-        {
-            waveCountDown -= Time.deltaTime;
-        }
     }
 
     IEnumerator SpawnWave(Waves _wave)
     {
         state = SpawnState.Spawning;
-
+        waveTextController.GetComponent<WaveScript>().UpdateWaveState(true);
         for (int i = 0; i < _wave.count; i++)
         {
             SpawnEnemy(_wave.enemy);
             yield return new WaitForSeconds(1f / _wave.rate);
         }
 
-        state = SpawnState.Waiting;
+        for (int i = 0; i < _wave.count2; i++)
+        {
+            SpawnEnemy(_wave.enemy2);
+            yield return new WaitForSeconds(1f / _wave.rate2);
+        }
 
+        WaveCompleted();
 
+        waveTextController.GetComponent<WaveScript>().UpdateWaveState(false);
         yield break;
     }
 
@@ -93,8 +85,7 @@ public class WaveSpawnController : MonoBehaviour
 
     void WaveCompleted()
     {
-        state = SpawnState.Counting;
-        waveCountDown = timeBetweenWaves;
+        state = SpawnState.Waiting;
 
         if(nextWave + 1 > waves.Length - 1)
         {
@@ -123,6 +114,24 @@ public class WaveSpawnController : MonoBehaviour
     public int GetCurrentWave()
     {
         return (nextWave + 1);
+    }
+
+    public void StartWave()
+    {
+        if(state == SpawnState.Waiting)
+        {
+            state = SpawnState.ReadyToStart;
+        }
+        
+    }
+
+    public bool IsWaveActive()
+    {
+        if(state == SpawnState.Spawning)
+        {
+            return true;
+        }
+        return false;
     }
 
 }
