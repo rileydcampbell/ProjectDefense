@@ -16,6 +16,7 @@ TagManager:
   - Restricted
   - Turret
   - LeftController
+  - Node
   layers:
   - Default
   - TransparentFX

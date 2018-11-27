@@ -1521,7 +1521,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d445f22b0bc9a614889fd75ed973757e, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.3
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2096,9 +2096,9 @@ MonoBehaviour:
   rangeDisplay: {fileID: 1061403641981024}
   useLaser: 0
   lineRenderer: {fileID: 0}
+  slowFactor: 0.5
   impactEffect: {fileID: 0}
   impactLight: {fileID: 0}
-  slowFactor: 0.5
 --- !u!114 &114880086635295246
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2288,8 +2288,8 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
+      key0: {r: 1, g: 0.8537458, b: 0.32549024, a: 1}
+      key1: {r: 1, g: 0.85490197, b: 0.32941177, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}

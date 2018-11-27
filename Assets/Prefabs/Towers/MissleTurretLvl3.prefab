@@ -1171,9 +1171,9 @@ MonoBehaviour:
   rangeDisplay: {fileID: 1293185678672206}
   useLaser: 0
   lineRenderer: {fileID: 0}
+  slowFactor: 0
   impactEffect: {fileID: 0}
   impactLight: {fileID: 0}
-  slowFactor: 0
 --- !u!114 &114445920446571098
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1596,8 +1596,8 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
+      key0: {r: 1, g: 0.8537458, b: 0.32549024, a: 1}
+      key1: {r: 1, g: 0.85490197, b: 0.32941177, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}

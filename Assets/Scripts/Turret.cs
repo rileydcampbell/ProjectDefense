@@ -11,7 +11,6 @@ public class Turret : MonoBehaviour {
     public float range = 15f;
     public float damage = 10f;
     public float fireRate = 2f;
-    private float fireCountdown = 0;
     public int towerCost;
     public int towerLevel = 1;
     public int upgradeCost = 150;
@@ -22,8 +21,10 @@ public class Turret : MonoBehaviour {
     public string enemyTag = "Enemy";
     public Transform rotateAround = null;
     private float xRot = 0;
+    private float fireCountdown = 0;
     public AudioSource fireSound;
 
+    [Header("Firing Setup")]
     public GameObject bulletPrefab;
     public Transform firePoint;
     public Transform firePoint1;
@@ -34,14 +35,14 @@ public class Turret : MonoBehaviour {
     public GameObject menu;
     public GameObject rangeDisplay;
 
+    [Header("Laser Setup")]
     public bool useLaser = false;
     public LineRenderer lineRenderer;
+    public float slowFactor = 0.5f;
     public ParticleSystem impactEffect;
     public Light impactLight;
     private Enemy targetEnemy;
-    public float slowFactor = 0.5f;
 
-	// Use this for initialization
 	void Start () {
         InvokeRepeating("UpdateTarget", 0f, 0.5f); // Repeats the update target function every 1/2 second, prevents calling the function 60+ times per second if the method was instead in the update function
         if (tower == "Missle")
@@ -216,6 +217,11 @@ public class Turret : MonoBehaviour {
     public int GetLevel()
     {
         return towerLevel;
+    }
+
+    public string GetTurretType()
+    {
+        return tower;
     }
 
 }

@@ -127,6 +127,9 @@ namespace VRTK
                 if (objectToHighlight.tag == "Turret")
                 {
                     objectToHighlight.GetComponent<Turret>().SetMenuState(true);
+                }else if(objectToHighlight.tag == "Node")
+                {
+                    objectToHighlight.GetComponent<NodeInteraction>().SetHighlightState(true);
                 }
             }
             else
@@ -146,6 +149,10 @@ namespace VRTK
                 if (objectToHighlight.tag == "Turret")
                 {
                     objectToHighlight.GetComponent<Turret>().SetMenuState(false);
+                }
+                else if (objectToHighlight.tag == "Node")
+                {
+                    objectToHighlight.GetComponent<NodeInteraction>().SetHighlightState(false);
                 }
             }
         }
