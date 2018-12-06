@@ -5,6 +5,7 @@ using UnityEngine;
 public class BuildManager : MonoBehaviour {
 
     public static BuildManager instance;
+    public bool buildMode = false;
 
     private void Awake()
     {

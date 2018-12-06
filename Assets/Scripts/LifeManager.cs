@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LifeManager : MonoBehaviour {
 
@@ -25,7 +26,7 @@ public class LifeManager : MonoBehaviour {
 
         if(life <= 0)
         {
-            print("Gameover");
+            SceneManager.LoadScene("Level 1");
         }
     }
 }
